@@ -9,21 +9,21 @@
 	<h1>Welcome</h1>
 	<h2 th:utext="${message}">..!..</h2>
 
-	<!--  
-       
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}
-          
-         -->
-
 	<a th:href="@{/beerList}">Beer List</a>
 
+	<div class="divContainer"
+		style="flex-direction: row; padding-top: 5em;">
+		<img  alt="beer-source : https://portugalinews.eu/nortada-and-dott-deliver-craft-beer-at-home/" style="width: 40%; height: auto;"
+			src="https://raw.githubusercontent.com/adrienpaysant/BeerProjectSpringJEE/dev/PBeer/beer.jpg?token=AK5SWRHTZVQNK7Y6PRWDOEK77YTDK">
 
-	<img alt="" src="https://raw.githubusercontent.com/adrienpaysant/BeerProjectSpringJEE/dev/PBeer/beer.jpg?token=AK5SWRBCQ3ZNWQAEIFJMMT277YS5Q">
-	
-       
-       
-   </body>
-    
+	</div>
+
+</body>
+
+<footer>
+	<div class="divContainer"
+		style="flex-direction: row; position: absolute; bottom: 0; padding-top: 5em;">
+		BeerProject- Adrien Paysant - HEARC Neuchâtel - JavaEE - 2020/2021</div>
+</footer>
+
 </html>
