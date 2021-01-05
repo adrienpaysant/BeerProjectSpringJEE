@@ -26,9 +26,9 @@ Phase 2:
 
 [X] Création d'un écran listant les bières
 
-[ ] Création de la fonctionnalité de suppression de bières avec un écran
+[X] Création de la fonctionnalité de suppression de bières avec un écran
 
 
 Phase 3:
 
-[ ] Création de la fonctionnalité de modification
+[X] Création de la fonctionnalité de modification
