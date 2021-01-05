@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Beer List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Person List</h1>
+      <a href="addBeer">Add Beer</a>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th> Name</th>
+               <th> Price</th>
+            </tr>
+            <tr th:each ="beer : ${beers}">
+               <td th:utext="${beer.name}">...</td>
+               <td th:utext="${beer.price}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
