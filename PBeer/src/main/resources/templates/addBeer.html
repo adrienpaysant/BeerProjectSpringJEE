@@ -8,12 +8,7 @@
    <body>
       <h1>Create a Beer:</h1>
        
-      <!--  
-         In Thymeleaf the equivalent of
-         JSP's ${pageContext.request.contextPath}/edit.html
-         would be @{/edit.html}         
-         -->
-          
+            <a href="/">Home</a>
       <form th:action="@{/addBeer}"
          th:object="${beerForm}" method="POST">
          Name:

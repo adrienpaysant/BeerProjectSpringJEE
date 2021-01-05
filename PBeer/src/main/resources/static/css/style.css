@@ -29,7 +29,8 @@ a{
 body {
 	display:flex; flex-direction: column; ; justify-content:space-around;
         text-align:center;margin:auto; width:95%;
-	
+	background-color: #f2efdc;
+	font-family: cursive;
 }
 
 .divContainer{

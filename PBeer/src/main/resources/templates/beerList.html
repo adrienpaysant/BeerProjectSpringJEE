@@ -21,7 +21,7 @@
 			<tr th:each="beer : ${beers}">
 				<td th:utext="${beer.name}">...</td>
 				<td th:utext="${beer.price}">...</td>
-				<td><a th:href="@{/beer/(index=${beer.index})}"> Details</a></td>
+				<td><a th:href="@{beer/{i}(i=${beer.index})}"> Details</a></td>
 			</tr>
 		</table>
 			<div></div>
