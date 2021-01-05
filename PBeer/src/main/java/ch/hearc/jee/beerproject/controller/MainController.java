@@ -28,13 +28,14 @@ public class MainController {
 		beers.add(new Beer("Namur", 15, 2));
 	}
 
-	// Injectez (inject) via application.properties.
+
 	@Value("${welcome.message}")
 	private String message;
 
 	@Value("${error.message}")
 	private String errorMessage;
 
+	
 	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
 	public String index(Model model) {
 
