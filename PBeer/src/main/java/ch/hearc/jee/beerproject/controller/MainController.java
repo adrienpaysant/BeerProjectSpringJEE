@@ -6,9 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ch.hearc.jee.beerproject.form.BeerForm;
 import ch.hearc.jee.beerproject.model.Beer;
@@ -40,6 +42,16 @@ public class MainController {
         return "index";
     }
  
+    @GetMapping(value = { "beer/" })
+    public String beer(Model model,@RequestParam("index") int index) {
+    	
+    	List<Beer> tBeers = new ArrayList<Beer>();
+    	tBeers.add(this.beers.get(index));
+        model.addAttribute("beers", tBeers);
+ 
+        return "beerDetail";
+    }
+    
     @RequestMapping(value = { "/beerList" }, method = RequestMethod.GET)
     public String beerList(Model model) {
  

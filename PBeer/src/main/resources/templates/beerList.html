@@ -6,7 +6,7 @@
       <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
    </head>
    <body>
-      <h1>Person List</h1>
+      <h1>>Beer List<</h1>
       <a href="addBeer">Add Beer</a>
       <br/><br/>
       <div>
@@ -18,6 +18,7 @@
             <tr th:each ="beer : ${beers}">
                <td th:utext="${beer.name}">...</td>
                <td th:utext="${beer.price}">...</td>
+              <td> <a th:href="@{/beer/(index=${beer.index})}"> Details</a></td>
             </tr>
          </table>
       </div>
