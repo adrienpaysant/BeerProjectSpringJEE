@@ -21,7 +21,9 @@ a:hover, input.button:hover, button:hover, #upBeer:hover{
 	border-color: black;
 }
 
- 
+input{
+	text-align: center;
+}
 
 #upBeer {
 	padding: 1px;

@@ -24,7 +24,7 @@
                <form th:action="@{/beer/{i}/update(i=${beer.index})}"
 		         th:object="${beerForm}" method="POST">
 		         <td >
-		         	<input type="text" th:field="*{name}" />   
+		         	<input type="text" th:field="*{name}"/>   
 		         </td> 
 		         <td >
 		         	<input type="text" th:field="*{price}" />     
