@@ -112,13 +112,12 @@ public class MainController {
 		String name = beerForm.getName();
 		double price = beerForm.getPrice();
 
-		if (name != null && name.length() > 0 //
-				&& price > 0) {
-			beers.get(index).setName(beerForm.getName());
-			beers.get(index).setPrice(beerForm.getPrice());
-			return "redirect:/beerList";
+		if (name != null && name.length() > 0) {
+			beers.get(index).setName(name);
 		}
-		model.addAttribute("errorMessage", errorMessage);
+		if (price != beers.get(index).getPrice() && price > 0) {
+			beers.get(index).setPrice(beerForm.getPrice());
+		}
 		return "redirect:/beerList";
 	}
 
