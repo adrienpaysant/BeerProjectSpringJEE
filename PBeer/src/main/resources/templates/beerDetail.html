@@ -20,12 +20,26 @@
                <td th:utext="${beer.name}">...</td>
                <td th:utext="${beer.price}">...</td>
             </tr>
+            <tr th:each ="beer : ${beers}">
+               <form th:action="@{/beer/{i}/update(i=${beer.index})}"
+		         th:object="${beerForm}" method="POST">
+		         <td >
+		         	<input type="text" th:field="*{name}" />   
+		         </td> 
+		         <td >
+		         	<input type="text" th:field="*{price}" />     
+		         </td>
+            </tr>
          </table>
         <div> </div>
       </div>
+       <div class="divContainer" style="flex-direction: row;">
+      	<input type="submit" id="upBeer" value="Update"/>
+      </div>
+      </form>
       <div th:each ="beer : ${beers}" class="divContainer" style="flex-direction: row;">
-      	<a  th:href="@{{i}/update(i=${beer.index})}"  style="background-color: Green">Update</a>
-      	<a   th:href="@{{i}/delete(i=${beer.index})}"  style="background-color: Red">Delete</a>
+      	<a   th:href="@{/beer/{i}/delete(i=${beer.index})}"  style="background-color: Red">Delete</a>
       </div>
    </body>
 </html>
+

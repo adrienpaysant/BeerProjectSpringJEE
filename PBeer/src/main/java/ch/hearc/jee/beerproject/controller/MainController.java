@@ -44,26 +44,28 @@ public class MainController {
 	}
 
 	@RequestMapping(value = { "/beer/{index}/delete" }, method = RequestMethod.GET)
-    public String beerDelete(Model model,@PathVariable("index") int index) {
-		
+	public String beerDelete(Model model, @PathVariable("index") int index) {
+
 		List<Beer> tBeers = new ArrayList<Beer>();
-		int newIndex=0;
-    	for (Beer beer : beers) {
-			if(beer.getIndex()!=index) {
-				tBeers.add(new Beer(beer.getName(),beer.getPrice(),newIndex++));
+		int newIndex = 0;
+		for (Beer beer : beers) {
+			if (beer.getIndex() != index) {
+				tBeers.add(new Beer(beer.getName(), beer.getPrice(), newIndex++));
 			}
 		}
-    	beers.clear();
-    	beers=tBeers;
-    	this.index=newIndex;
-    	return "redirect:/beerList";
-    }
+		beers.clear();
+		beers = tBeers;
+		this.index = newIndex;
+		return "redirect:/beerList";
+	}
 
 	@GetMapping(value = { "beer/{index}" })
 	public String beer(Model model, @PathVariable("index") int index) {
 		List<Beer> tBeers = new ArrayList<Beer>();
 		tBeers.add(this.beers.get(index));
 		model.addAttribute("beers", tBeers);
+		BeerForm beerForm = new BeerForm();
+		model.addAttribute("beerForm", beerForm);
 		return "beerDetail";
 	}
 
@@ -101,6 +103,23 @@ public class MainController {
 
 		model.addAttribute("errorMessage", errorMessage);
 		return "addBeer";
+	}
+
+	@RequestMapping(value = { "/beer/{index}/update" }, method = RequestMethod.POST)
+	public String updateBeer(Model model, //
+			@ModelAttribute("beerForm") BeerForm beerForm, @PathVariable("index") int index) {
+
+		String name = beerForm.getName();
+		double price = beerForm.getPrice();
+
+		if (name != null && name.length() > 0 //
+				&& price > 0) {
+			beers.get(index).setName(beerForm.getName());
+			beers.get(index).setPrice(beerForm.getPrice());
+			return "redirect:/beerList";
+		}
+		model.addAttribute("errorMessage", errorMessage);
+		return "redirect:/beerList";
 	}
 
 }

@@ -1,39 +1,58 @@
 h1 {
-    color:#0000FF;
-}
- 
-h2 {
-    color:#FF0000;
-}
- 
-table {
-    border-collapse: collapse;
-}
- 
-table th, table td {
-    padding: 5px;
-}
-a:hover, input.button:hover, button:hover {
-    color: darkgrey;
-    border-color: #2E4053;
-    background-color: white;
-    border-color: black;
+	color: #0000FF;
 }
 
-a{
+h2 {
+	color: #FF0000;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table th, table td {
+	padding: 5px;
+}
+
+a:hover, input.button:hover, button:hover, #upBeer:hover{
+	color: darkgrey;
+	border-color: #2E4053;
+	background-color: white;
+	border-color: black;
+}
+
+ 
+
+#upBeer {
+	padding: 1px;
+	border-radius: 2em;
+	width: 10%;
+	text-align: center;
+	background-color: green;
+}
+
+a {
 	background-color: lightgray;
-	padding:1px;
+	padding: 1px;
 	border-radius: 2em;
 }
 
 body {
-	display:flex; flex-direction: column; ; justify-content:space-around;
-        text-align:center;margin:auto; width:95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	margin: auto;
+	width: 95%;
 	background-color: #f2efdc;
 	font-family: cursive;
 }
 
-.divContainer{
-	display:flex; flex-direction: column; ; justify-content:space-around;
-        text-align:center;margin:auto; width:95%;
+.divContainer {
+	display: flex;
+	flex-direction: column;;
+	justify-content: space-around;
+	text-align: center;
+	margin: auto;
+	width: 95%;
 }
