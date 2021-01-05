@@ -23,5 +23,9 @@
          </table>
         <div> </div>
       </div>
+      <div th:each ="beer : ${beers}" class="divContainer" style="flex-direction: row;">
+      	<a  th:href="@{{i}/update(i=${beer.index})}"  style="background-color: Green">Update</a>
+      	<a   th:href="@{{i}/delete(i=${beer.index})}"  style="background-color: Red">Delete</a>
+      </div>
    </body>
 </html>
